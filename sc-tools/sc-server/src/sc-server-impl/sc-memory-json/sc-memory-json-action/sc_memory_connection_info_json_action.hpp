@@ -16,8 +16,7 @@ public:
       ScMemoryJsonPayload requestPayload,
       ScMemoryJsonPayload & errorsPayload) override
   {
-    ScMemoryJsonPayload responsePayload{
-        {"connection_id", (sc_uint64)context}, {"user_addr", context->GetUserAddr().Hash()}};
+    ScMemoryJsonPayload responsePayload{{ "connection_id", (sc_uint64)context}, {"user_addr", context->GetUserAddr().Hash()}};
 
     return responsePayload;
   }
