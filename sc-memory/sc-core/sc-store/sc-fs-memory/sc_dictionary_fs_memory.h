@@ -109,8 +109,7 @@ sc_dictionary_fs_memory_status sc_dictionary_fs_memory_get_link_hashes_by_string
     sc_dictionary_fs_memory * memory,
     sc_char const * string,
     sc_uint64 string_size,
-    void * data,
-    void (*callback)(void * data, sc_addr const link_addr));
+    sc_link_filter * filter);
 
 /*! Function that retrieves sc-link hashes by a substring term extension from the file memory.
  * @param memory Pointer to the memory memory.
@@ -129,8 +128,7 @@ sc_dictionary_fs_memory_status sc_dictionary_fs_memory_get_link_hashes_by_substr
     sc_char const * string,
     sc_uint64 string_size,
     sc_uint32 max_length_to_search_as_prefix,
-    void * data,
-    void (*callback)(void * data, sc_addr const link_addr));
+    sc_link_filter * link_filter);
 
 /*! Function that retrieves sc-link hashes by a substring term from the file memory.
  * @param memory Pointer to the file memory.
@@ -147,8 +145,7 @@ sc_dictionary_fs_memory_status sc_dictionary_fs_memory_get_link_hashes_by_substr
     sc_dictionary_fs_memory * memory,
     sc_char const * string,
     sc_uint64 string_size,
-    void * data,
-    void (*callback)(void * data, sc_addr const link_addr));
+    sc_link_filter * link_filter);
 
 /*! Function that retrieves sc-link strings by a substring term extension from the file memory.
  * @param memory Pointer to the file memory.
@@ -170,8 +167,7 @@ sc_dictionary_fs_memory_status sc_dictionary_fs_memory_get_strings_by_substring_
     sc_char const * string,
     sc_uint64 string_size,
     sc_uint32 max_length_to_search_as_prefix,
-    void * data,
-    void (*callback)(void * data, sc_addr const link_addr, sc_char const * link_content));
+    sc_link_filter * filter);
 
 /*! Function that retrieves sc-link strings by a substring term from the file memory.
  * @param memory Pointer to the file memory.
@@ -189,8 +185,7 @@ sc_dictionary_fs_memory_status sc_dictionary_fs_memory_get_strings_by_substring(
     sc_dictionary_fs_memory * memory,
     sc_char const * string,
     sc_uint64 string_size,
-    void * data,
-    void (*callback)(void * data, sc_addr const link_addr, sc_char const * link_content));
+    sc_link_filter * filter);
 
 sc_dictionary_fs_memory_status sc_dictionary_fs_memory_intersect_link_hashes_by_terms(
     sc_dictionary_fs_memory const * memory,
